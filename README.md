@@ -96,8 +96,16 @@ directories into `runtime/`:
 PIC/  DEC/  SPR/  dat/  snd/  KMD/
 ```
 
-(`fury.img`, the 577 KB real-mode image the runtime loads at segment
-`0x0207`, is packed out of the original `FURY.EXE`.)
+`fury.img` is the real-mode memory image of the original `FURY.EXE` loaded
+at segment `0x0207` (with MZ relocations applied). Generate it from your
+legal copy of `FURY.EXE`:
+
+```
+python make_fury_img.py
+```
+
+Place `FURY.EXE` next to the script or in a parent directory — it will
+also copy the result to `runtime/` automatically.
 
 After building, copy the flat binary from `sr/` into `runtime/`:
 
