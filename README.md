@@ -99,6 +99,15 @@ PIC/  DEC/  SPR/  dat/  snd/  KMD/
 (`fury.img`, the 577 KB real-mode image the runtime loads at segment
 `0x0207`, is packed out of the original `FURY.EXE`.)
 
+After building, copy the flat binary from `sr/` into `runtime/`:
+
+```
+Copy-Item sr\fury-flat.bin runtime\
+```
+
+The runtime requires `fury-flat.bin` in its own directory — it is not copied
+automatically by the build scripts.
+
 Then:
 
 ```
